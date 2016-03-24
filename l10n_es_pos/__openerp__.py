@@ -14,7 +14,6 @@
     "depends": [
         'base',
         'point_of_sale',
-        'pos_pricelist'
     ],
     'data': [
         "views/pos_template.xml",

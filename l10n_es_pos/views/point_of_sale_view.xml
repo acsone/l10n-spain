@@ -49,9 +49,9 @@
 <record id="view_pos_config_form" model="ir.ui.view">
     <field name="name">POS Order (add simplified invoice limit option)</field>
     <field name="model">pos.config</field>
-    <field name="inherit_id" ref="pos_pricelist.view_pos_config_form_pos_pricelist"/>
+    <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
     <field name="arch" type="xml">
-        <field name="display_price_with_taxes" position="after">
+        <field name="sequence_id" position="after">
             <field name="simplified_invoice_limit"/>
         </field>
     </field>

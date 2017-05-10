@@ -116,7 +116,7 @@ class Mod349(models.Model):
                                                 country=partner_country),
              'operation_key': operation_key,
              'country_id': partner_country.id or False,
-             'total_operation_amount': sum_credit - sum_debit
+             'total_operation_amount': sum_credit + sum_debit
              })
         # Creation of partner detail lines
         for invoice in invoices:

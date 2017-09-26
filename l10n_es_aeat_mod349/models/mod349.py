@@ -140,8 +140,10 @@ class Mod349(models.Model):
             for origin_inv in refund.origin_invoice_ids:
                 if origin_inv.state in ('open', 'paid'):
                     # searches for details of another 349s to restore
-                    refund_details = partner_detail_obj.search(
-                        [('invoice_id', '=', origin_inv.id)])
+                    refund_details = partner_detail_obj.search([
+                        ('invoice_id', '=', origin_inv.id),
+                        ('partner_record_id.report_id', '=', self.id),
+                    ])
                     if refund_details:
                         # creates a dictionary key with partner_record id to
                         # after recover it

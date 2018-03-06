@@ -132,7 +132,7 @@
          <field name="sequence">130</field>
          <field name="name">es49100</field>
          <field name="description">A) RESULTADO DE EXPLOTACIÓN (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12)</field>
-         <field name="expression">+es40100+es40200+es40300+es40400+es40500+es40600+es40700+es40800+es40900+es40000+es41000+es41100+es41300</field>
+         <field name="expression">+es40100+es40200+es40300+es40400+es40500+es40600+es40700+es40800+es40900+es41000+es41100+es41300</field>
          <field name="style_id" ref="mis_report_style_l10n_es_l1"/>
       </record>
       <record id="mis_report_kpi_es_pyg_pymes_41400_summary" model="mis.report.kpi">

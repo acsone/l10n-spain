@@ -14,7 +14,7 @@
     'version': '10.0.1.0.0',
     'license': 'AGPL-3',
     'depends': [
-        'l10n_es_mis_reports',  # OCA/account-financial-reporting
+        'l10n_es_mis_report',  # OCA/account-financial-reporting
     ],
     'data': [
         'data/mis_report_trial_balance_full_summary.xml',

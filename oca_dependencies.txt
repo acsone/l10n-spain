@@ -10,3 +10,5 @@ bank-statement-import
 partner-contact
 queue
 reporting-engine
+mis-builder
+l10n-spain https://github.com/Eficent/l10n-spain 10.0-add-l10n_es_mis_reports-v2

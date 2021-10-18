@@ -28,6 +28,6 @@ class IrSequence(models.Model):
                     _(
                         "There is already a simplified invoice "
                         "sequence with that prefix and it should be "
-                        "unique."
+                        "unique. Prefix: %s" % (sequence.prefix)
                     )
                 )

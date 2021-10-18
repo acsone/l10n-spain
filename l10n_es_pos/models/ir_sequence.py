@@ -20,6 +20,7 @@ class IrSequence(models.Model):
                     [
                         ("code", "=", "pos.config.simplified_invoice"),
                         ("prefix", "=", sequence.prefix),
+                        ("company_id", "=", sequence.company_id.id)
                     ]
                 )
                 > 1
@@ -28,6 +29,6 @@ class IrSequence(models.Model):
                     _(
                         "There is already a simplified invoice "
                         "sequence with that prefix and it should be "
-                        "unique. Prefix: %s" % (sequence.prefix)
+                        "unique. Sequence: %s" % (sequence.display_name)
                     )
                 )

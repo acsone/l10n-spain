@@ -1,11 +1,14 @@
 # Copyright 2018 David Vidal <david.vidal@tecnativa.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
+import logging
 from odoo import SUPERUSER_ID, api
+
+_logger = logging.getLogger(__name__)
 
 
 def post_init_hook(cr, registry, vals=None):
     """For brand new installations"""
+    _logger.info("l10n_es_pos: Post init hook - creating sequences")
     env = api.Environment(cr, SUPERUSER_ID, {})
     IrSequence = env["ir.sequence"]
     pos_config = env["pos.config"].search(

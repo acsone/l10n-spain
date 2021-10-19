@@ -25,7 +25,7 @@ def post_init_hook(cr, registry, vals=None):
             if not pos_name_dupes[pos.name]
             else "%s_%d" % (pos.name, pos_name_dupes[pos.name])
         )
-        pos.l10n_es_simplified_invoice_sequence_id = IrSequence.create(
+        sequence = IrSequence.create(
             {
                 "name": (
                     pos.with_context(
@@ -42,6 +42,7 @@ def post_init_hook(cr, registry, vals=None):
                 "company_id": pos_vals.get("company_id", pos.company_id.id),
             }
         )
+        pos.write({"l10n_es_simplified_invoice_sequence_id": sequence.id})
 
 
 def uninstall_hook(cr, registry):

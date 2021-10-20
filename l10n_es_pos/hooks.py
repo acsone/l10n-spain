@@ -40,6 +40,7 @@ def _configure_sequences(env, vals=None):
             }
         )
         pos.write({"l10n_es_simplified_invoice_sequence_id": sequence.id})
+    pos_config.flush()
 
 
 def post_init_hook(cr, registry, vals=None):

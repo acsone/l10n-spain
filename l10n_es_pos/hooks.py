@@ -6,10 +6,7 @@ from odoo import SUPERUSER_ID, api
 _logger = logging.getLogger(__name__)
 
 
-def post_init_hook(cr, registry, vals=None):
-    """For brand new installations"""
-    _logger.info("l10n_es_pos: Post init hook - creating sequences")
-    env = api.Environment(cr, SUPERUSER_ID, {})
+def _configure_sequences(env, vals=None):
     IrSequence = env["ir.sequence"]
     pos_config = env["pos.config"].search(
         [("l10n_es_simplified_invoice_sequence_id", "=", False)]
@@ -43,6 +40,14 @@ def post_init_hook(cr, registry, vals=None):
             }
         )
         pos.write({"l10n_es_simplified_invoice_sequence_id": sequence.id})
+
+
+def post_init_hook(cr, registry, vals=None):
+    """For brand new installations"""
+    _logger.info("l10n_es_pos: Post init hook - creating sequences")
+    with api.Environment.manage():
+        env = api.Environment(cr, SUPERUSER_ID, {})
+        _configure_sequences(env, vals)
 
 
 def uninstall_hook(cr, registry):

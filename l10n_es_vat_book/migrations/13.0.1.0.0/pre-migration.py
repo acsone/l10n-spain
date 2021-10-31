@@ -14,8 +14,8 @@ def link_invoices(cr):
     UPDATE l10n_es_vat_book_line vbl0
     SET move_id = am.id
     FROM l10n_es_vat_book_line vbl
-    INNER JOIN account_invoice ai ON vbl.invoice_id = ai.id
-    INNER JOIN account_move_line aml ON aml.invoice_id = ai.id
+    INNER JOIN account_invoice ai ON vbl.move_id = ai.move_id
+    INNER JOIN account_move_line aml ON aml.move_id = ai.move_id
     INNER JOIN account_move am ON aml.move_id = am.id
     WHERE vbl.id = vbl0.id
     """

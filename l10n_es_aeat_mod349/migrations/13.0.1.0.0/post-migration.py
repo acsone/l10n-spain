@@ -11,5 +11,5 @@ def migrate(env, version):
         UPDATE account_move am
         SET eu_triangular_deal = ai.eu_triangular_deal
         FROM account_invoice ai
-        WHERE ai.id = am.old_invoice_id""",
+        WHERE ai.move_id = am.id""",
     )
